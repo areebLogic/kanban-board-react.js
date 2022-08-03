@@ -1,12 +1,20 @@
 import React from "react";
+import Items from './Items'
+import AddTask from "./AddTask";
 import './Column.css';
 const Column = () => {
 
 
+    
+
+
     return(
        <div className="column">
-        <p>This is a column</p>
-
+        <h3>This is a column</h3>
+        <Items></Items>
+        <Items></Items>
+        <Items></Items>
+        <AddTask></AddTask>
        </div>
     );
 
