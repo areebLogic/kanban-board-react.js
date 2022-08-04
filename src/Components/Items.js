@@ -7,7 +7,6 @@ const Items= ()=>{
     return(
         <div className="card-style">
         <TransitionButton text={'<'}></TransitionButton>
-
         <p>This will be the heading</p>
         <p>This will be the description</p>
         <TransitionButton text={'>'}></TransitionButton>

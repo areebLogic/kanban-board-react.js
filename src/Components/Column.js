@@ -3,11 +3,7 @@ import Items from './Items'
 import AddTask from "./AddTask";
 import './Column.css';
 const Column = () => {
-
-
     
-
-
     return(
        <div className="column">
         <h3>This is a column</h3>
