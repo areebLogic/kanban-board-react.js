@@ -1,19 +1,17 @@
 import './App.css';
 import Column from './Components/Column';
-import ItemState from './context/ItemState';
+
 
 
 function App() {
-//fun ctio
 
   return(
-    <ItemState>
+   
     <div className='column-container'>
-    <Column />
-    <Column />
-    <Column />
+    <Column text={'To Do'} onColumnId={0}/>
+    <Column text={'In Progress'} onColumnId={1}/>
+    <Column text={'Completed'} onColumnId={2}/>
     </div>
-    </ItemState> 
     
     );
 }

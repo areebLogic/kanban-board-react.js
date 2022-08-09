@@ -1,12 +1,22 @@
-import React from "react";
+import React, { useContext } from "react";
+import Column from "./Column";
+
 
 
 const AddTask =()=>{
 
+
+
+    const inputHandler = (e) => {
+        const item = {
+            text: e.target.value
+        }
+    }
+
     return(
         <>
         <input></input>
-        <button>Add Task</button>
+        <button onInput={inputHandler}>Add Task</button>
         </>
     )
 }
