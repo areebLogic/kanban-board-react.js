@@ -4,7 +4,7 @@ import  "./Items.css";
 
 const Items= (props)=>{
 
-    let columnIndex = 0; 
+    let columnIndex = props.columnIndex; 
 
     const onRightButtonClickHandler = () => {
         columnIndex+= 1;
@@ -17,8 +17,8 @@ const Items= (props)=>{
     return(
         <div className="card-style">
         <TransitionButton onClick={onRightButtonClickHandler} text={'<'}></TransitionButton>
-        <p>This will be the heading</p>
-        <p>This will be the description</p>
+        <p>{props.title}</p>
+        
         <TransitionButton onClick={onLeftButtonClickHandler} text={'>'}></TransitionButton>
         </div>
     );
