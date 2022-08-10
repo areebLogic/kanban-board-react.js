@@ -5,17 +5,17 @@ const initialState = {
   currentId: 3,
   items: [
     {
-      text: "abcd",
+      text: "Show Kanban board to Team Lead",
       columnId: 0,
       id: 0,
     },
     {
-      text: "efgh",
+      text: "Discuss resources for Node.js",
       columnId: 0,
       id: 1,
     },
     {
-      text: "igkl",
+      text: "Complete React basics and advanced topics",
       columnId: 1,
       id: 2,
     },
