@@ -1,63 +1,50 @@
-import React, { useState } from "react";
-import Items from './Items'
-import AddTask from "./AddTask";
-import './Column.css';
-
-const DUMMY_EXPENSES = [
-    {
-      columnId: 0,
-      title: 'should be 1st',
-      description: 'Awais',
-      
-    },
-    
-    {
-        columnId: 1,
-        title: 'should be in 2nd',
-        
-        
-    },
-    {
-        columnId: 2,
-        title: 'should be in 3rd',
-        
-        
-    },
-  ];
-
-  
+import Item from "./Item";
+import { useContext, useState } from "react";
+import { GlobalContext } from "../context/GlobalState";
+import "../styles/column.css";
 
 const Column = (props) => {
-    
-    const[items, setItems] = useState(DUMMY_EXPENSES);
-    const column_id = props.onColumnId;
+  const { items, addItem } = useContext(GlobalContext);
+  const [input, setInput] = useState("");
 
-    const addItemsHandler = (item) => {
-        setItems((prevItems) => {
-          return [item, ...prevItems];
-        });
+
+  const addTask = (e) => {
+    if (input !== "") {
+      const item = {
+        text: input,
+        columnId: Number(props.columnId),
       };
+      addItem(item);
+    }
+  };
 
-   
-
-    
-    
-    return(
-       <div className="column">
-        <h3>{props.text}</h3>
-        {items.map((items)=>{
-        if(items.columnId===column_id){
-            return(<Items
-                columnIndex= {items.columnId}
-                title= {items.title}/>)
-        }
-        
-       })}
-
-        <AddTask onAddItem={addItemsHandler} onSetColumId={column_id}></AddTask>
-       </div>
-    );
-
-}
+  return (
+    <div id="column">
+      <h1>{props.title}</h1>
+      <div className="items-container">
+        {items.map((item) => {
+          if (item.columnId == props.columnId) {
+            return <Item key={item.id} item={item}></Item>;
+          } else {
+            return "";
+          }
+        })}
+      </div>
+      <input
+        className="input"
+        type="text"
+        placeholder="Task Description"
+        value={input}
+        onChange={(e) => setInput(e.target.value)}
+      ></input>
+      <button
+        className="add-task-btn"
+        onClick={addTask}
+      >
+        Add Task
+      </button>
+    </div>
+  );
+};
 
 export default Column;

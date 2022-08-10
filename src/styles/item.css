@@ -1,0 +1,21 @@
+#item {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 100px;
+    margin: auto;
+    margin-top: 20px;
+    padding: 5px;
+    border: 1px solid rgb(6, 4, 1);
+    
+}
+
+#item .btn-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: auto;
+}
+
+#item .btn-container button {
+    border: none;
+}
